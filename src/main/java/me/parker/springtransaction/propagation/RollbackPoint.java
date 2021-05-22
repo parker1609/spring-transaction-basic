@@ -6,9 +6,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public enum RollbackPoint {
-    BEFORE_NESTED_TRANSACTION("B 트랜잭션 이전"),
-    INNER_NESTED_TRANSACTION("B 트랜잭션 내부"),
-    AFTER_NESTED_TRANSACTION("B 트랜잭션 이후")
+    NOTHING("롤백하지 않음"),
+    AFTER_DEBITS("출금 이후"),
+    AFTER_INSERT_BANK_STATEMENT("거래 내역서 생성 이후")
     ;
 
     private final String point;

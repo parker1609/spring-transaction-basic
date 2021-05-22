@@ -9,8 +9,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
-public class User {
+public class BankStatement {
     private Long id;
-    private String name;
-    private Long balance;
+    private Long fromUserId;
+    private Long toUserId;
+    private long amount;
 }

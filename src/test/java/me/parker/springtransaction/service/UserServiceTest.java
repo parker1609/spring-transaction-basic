@@ -15,13 +15,13 @@ public class UserServiceTest {
     private UserService userService;
 
     @Test
-    @DisplayName("서비스 데모 테스트")
+    @DisplayName("유저 id 조회")
     void findById() {
         User user = userService.findById(1L);
 
         assertThat(user).isNotNull();
         assertThat(user.getId()).isEqualTo(1L);
         assertThat(user.getName()).isEqualTo("PARK");
-        assertThat(user.getAge()).isEqualTo(20);
+        assertThat(user.getBalance()).isEqualTo(1000);
     }
 }
