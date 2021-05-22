@@ -1,1 +1,15 @@
-
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: "jdbc:h2:mem:spring-transaction;MODE=MYSQL;DB_CLOSE_DELAY=-1"
+    username: sa
+    password:
+  sql:
+    init:
+      schema-locations: classpath*:schema-h2.sql
+      data-locations: classpath*:data-h2.sql
+server:
+  port: 8080
+logging:
+  level:
+    root: info
