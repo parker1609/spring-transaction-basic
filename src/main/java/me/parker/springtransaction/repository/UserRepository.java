@@ -23,4 +23,16 @@ public class UserRepository {
                 userMapper,
                 userId);
     }
+
+    public void updateNameById(String name, Long userId) {
+        jdbcTemplate.update("UPDATE users SET name=? WHERE id=?", name, userId);
+    }
+
+    public void updateAgeById(int age, Long userId) {
+        jdbcTemplate.update("UPDATE users SET age=? WHERE id=?", age, userId);
+    }
+
+    public void updateById(String name, int age, Long userId) {
+        jdbcTemplate.update("UPDATE users SET name=?, age=? WHERE id=?", name, age, userId);
+    }
 }
