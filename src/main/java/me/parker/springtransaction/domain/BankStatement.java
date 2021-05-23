@@ -1,12 +1,9 @@
 package me.parker.springtransaction.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
-@Builder
-@AllArgsConstructor
 @Getter
 @ToString
 public class BankStatement {
@@ -14,4 +11,19 @@ public class BankStatement {
     private Long fromUserId;
     private Long toUserId;
     private long amount;
+
+    @Builder
+    public BankStatement(Long id, Long fromUserId, Long toUserId, long amount) {
+        this.id = id;
+        this.fromUserId = fromUserId;
+        this.toUserId = toUserId;
+        this.amount = amount;
+    }
+
+    @Builder
+    public BankStatement(Long fromUserId, Long toUserId, long amount) {
+        this.fromUserId = fromUserId;
+        this.toUserId = toUserId;
+        this.amount = amount;
+    }
 }

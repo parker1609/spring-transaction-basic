@@ -8,7 +8,8 @@ import lombok.RequiredArgsConstructor;
 public enum RollbackPoint {
     NOTHING("롤백하지 않음"),
     AFTER_DEBITS("출금 이후"),
-    AFTER_INSERT_BANK_STATEMENT("거래 내역서 생성 이후")
+    AFTER_INSERT_BANK_STATEMENT("거래 내역서 생성 이후"),
+    BEFORE_END("뱅킹 서비스가 끝나기 직전")
     ;
 
     private final String point;

@@ -25,10 +25,10 @@ public class BankStatementRepository {
                 bankStatementId);
     }
 
-    public void insert(Long fromUserId, Long toUserId, long amount) {
+    public void insert(BankStatement bankStatement) {
         jdbcTemplate.update("INSERT INTO bank_statements (id, from_user_id, to_user_id, amount)" +
                 "VALUES(null, ?, ?, ?)",
-                fromUserId, toUserId, amount);
+                bankStatement.getFromUserId(), bankStatement.getToUserId(), bankStatement.getAmount());
     }
 
     public void deleteAll() {

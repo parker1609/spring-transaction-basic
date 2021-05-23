@@ -38,7 +38,12 @@ public class BankStatementRepositoryTest {
     @Test
     @DisplayName("새로운 거래 내역서를 추가한다.")
     void insert() {
-        bankStatementRepository.insert(2L, 3L, 10000);
+        BankStatement newBankStatement = BankStatement.builder()
+                .fromUserId(2L)
+                .toUserId(3L)
+                .amount(10000)
+                .build();
+        bankStatementRepository.insert(newBankStatement);
 
         BankStatement savedBankStatement = bankStatementRepository.findById(2L);
 
